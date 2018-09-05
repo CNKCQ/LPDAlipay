@@ -1,0 +1,79 @@
+{
+  "name": "LPDAlipay",
+  "version": "0.1.0",
+  "summary": "A short description of LPDAlipay.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/cnkcq/LPDAlipay",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "cnkcq": "chengquan.wang@ele.me"
+  },
+  "source": {
+    "git": "https://github.com/cnkcq/LPDAlipay.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "public_header_files": "LPDAlipay/Classes/LPDAlipay.h",
+      "source_files": "LPDAlipay/Classes/**/*.{h,m,mm}",
+      "resources": "LPDAlipay/Assets/*",
+      "dependencies": {
+        "LPDAlipay/openssl": [
+
+        ],
+        "LPDAlipay/Alipay": [
+
+        ]
+      }
+    },
+    {
+      "name": "openssl",
+      "header_dir": "openssl",
+      "public_header_files": "LPDAlipay/libs/openssl/*",
+      "vendored_libraries": [
+        "LPDAlipay/libs/libcrypto.a",
+        "LPDAlipay/libs/libssl.a"
+      ],
+      "preserve_paths": [
+        "LPDAlipay/libs/libcrypto.a",
+        "LPDAlipay/libs/libssl.a"
+      ],
+      "libraries": [
+        "stdc++",
+        "c++.1",
+        "c++abi",
+        "z.1.1.3",
+        "icucore"
+      ],
+      "requires_arc": false
+    },
+    {
+      "name": "Alipay",
+      "vendored_frameworks": "LPDAlipay/framework/AlipaySDK.framework",
+      "resource_bundles": {
+        "AlipaySDK": [
+          "LPDAlipay/framework/*.bundle"
+        ]
+      },
+      "frameworks": [
+        "SystemConfiguration",
+        "CoreTelephony",
+        "QuartzCore",
+        "CoreText",
+        "CoreGraphics",
+        "UIKit",
+        "Foundation",
+        "CFNetwork",
+        "CoreMotion"
+      ]
+    }
+  ]
+}

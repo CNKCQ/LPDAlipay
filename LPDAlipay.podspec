@@ -21,22 +21,38 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/cnkcq/LPDAlipay'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'cnkcq' => 'chengquan.wang@ele.me' }
-  s.source           = { :git => 'https://github.com/cnkcq/LPDAlipay.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+    s.homepage         = 'https://github.com/cnkcq/LPDAlipay'
+    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.author           = { 'cnkcq' => 'chengquan.wang@ele.me' }
+    s.source           = { :git => 'https://github.com/cnkcq/LPDAlipay.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'LPDAlipay/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'LPDAlipay' => ['LPDAlipay/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+    s.ios.deployment_target = '8.0'
+    
+    s.default_subspecs = 'Core'
+    
+    s.subspec 'Core' do |ss|
+        ss.public_header_files = 'LPDAlipay/Classes/LPDAlipay.h'
+        ss.source_files = 'LPDAlipay/Classes/**/*.{h,m,mm}'
+        ss.resources = 'LPDAlipay/Assets/*'
+        ss.dependency 'LPDAlipay/openssl'
+        ss.dependency 'LPDAlipay/Alipay'
+    end
+    
+    s.subspec 'openssl' do |ss|
+        ss.header_dir          = 'openssl'
+        ss.public_header_files = "LPDAlipay/libs/openssl/*"
+        ss.vendored_libraries  = "LPDAlipay/libs/libcrypto.a", "LPDAlipay/libs/libssl.a"
+        ss.preserve_paths      = "LPDAlipay/libs/libcrypto.a", "LPDAlipay/libs/libssl.a"
+        ss.libraries           = 'crypto', 'ssl'
+        ss.requires_arc        = false
+        ss.libraries = ['stdc++','c++.1','c++abi','z.1.1.3','icucore']
+    end
+    
+    s.subspec 'Alipay' do |ss|
+        ss.vendored_frameworks = 'LPDAlipay/framework/AlipaySDK.framework'
+        ss.resource_bundle = {
+            'AlipaySDK' => ['LPDAlipay/framework/*.bundle']
+        }
+        ss.frameworks            = 'SystemConfiguration', 'CoreTelephony', 'QuartzCore', 'CoreText', 'CoreGraphics', 'UIKit', 'Foundation','CFNetwork', 'CoreMotion'
+    end
 end

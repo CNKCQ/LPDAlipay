@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
@@ -22,8 +21,13 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		C5D862DC739FBBFDB42F027A /* Pods_LPDAlipay_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB97458FA1FD8A4C88B35C6 /* Pods_LPDAlipay_Tests.framework */; };
-		F11FA5634441825CF3DD4B93 /* Pods_LPDAlipay_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C5585EFEF17094D9B81DBC /* Pods_LPDAlipay_Example.framework */; };
+		AAAEB2FA213FC5A60004BF43 /* LPDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB2F9213FC5A60004BF43 /* LPDWebViewController.m */; };
+		AAAEB2FD213FCDFA0004BF43 /* LPDAuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB2FC213FCDFA0004BF43 /* LPDAuthInfo.m */; };
+		AAAEB300213FCEDF0004BF43 /* LPDOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB2FF213FCEDF0004BF43 /* LPDOrderInfo.m */; };
+		AAAEB303213FCF820004BF43 /* LPDRSASigner.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB302213FCF820004BF43 /* LPDRSASigner.m */; };
+		AAAEB306213FCFED0004BF43 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB305213FCFED0004BF43 /* openssl_wrapper.m */; };
+		C293A4A334A464D6342CAC35 /* libPods-LPDAlipay_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7928D3B5F348DD73C2337730 /* libPods-LPDAlipay_Example.a */; };
+		E4DB271A53853A3995139E09 /* libPods-LPDAlipay_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817130FC0CC7A710B3C551FF /* libPods-LPDAlipay_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0EB97458FA1FD8A4C88B35C6 /* Pods_LPDAlipay_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPDAlipay_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		14A0E377018EB6E8424A4776 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		14A0E377018EB6E8424A4776 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2BB45BD71A85315AE88091C3 /* Pods-LPDAlipay_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDAlipay_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPDAlipay_Example/Pods-LPDAlipay_Example.release.xcconfig"; sourceTree = "<group>"; };
-		30C9D27E3DD46C68008D19F6 /* LPDAlipay.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = LPDAlipay.podspec; path = ../LPDAlipay.podspec; sourceTree = "<group>"; };
+		30C9D27E3DD46C68008D19F6 /* LPDAlipay.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LPDAlipay.podspec; path = ../LPDAlipay.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* LPDAlipay_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPDAlipay_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,11 +64,30 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7928D3B5F348DD73C2337730 /* libPods-LPDAlipay_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LPDAlipay_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		816EC8EE5BF88216FD9F4D07 /* Pods-LPDAlipay_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDAlipay_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPDAlipay_Tests/Pods-LPDAlipay_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		85C5585EFEF17094D9B81DBC /* Pods_LPDAlipay_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPDAlipay_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		817130FC0CC7A710B3C551FF /* libPods-LPDAlipay_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LPDAlipay_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99BF1FCBEB5A30A258A645C0 /* Pods-LPDAlipay_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDAlipay_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPDAlipay_Example/Pods-LPDAlipay_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B76FE1D40BE22361FC90F0BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AA216A4821401E37005CB77B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		AA216A4A21401E4E005CB77B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		AA216A4C21401E86005CB77B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AA216A4E21401E96005CB77B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		AA216A5021401EAA005CB77B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		AA216A5221401EBC005CB77B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		AA216A5421401ECC005CB77B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AAAEB2F8213FC5A60004BF43 /* LPDWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPDWebViewController.h; sourceTree = "<group>"; };
+		AAAEB2F9213FC5A60004BF43 /* LPDWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDWebViewController.m; sourceTree = "<group>"; };
+		AAAEB2FB213FCDFA0004BF43 /* LPDAuthInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPDAuthInfo.h; sourceTree = "<group>"; };
+		AAAEB2FC213FCDFA0004BF43 /* LPDAuthInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDAuthInfo.m; sourceTree = "<group>"; };
+		AAAEB2FE213FCEDF0004BF43 /* LPDOrderInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPDOrderInfo.h; sourceTree = "<group>"; };
+		AAAEB2FF213FCEDF0004BF43 /* LPDOrderInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDOrderInfo.m; sourceTree = "<group>"; };
+		AAAEB301213FCF820004BF43 /* LPDRSASigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPDRSASigner.h; sourceTree = "<group>"; };
+		AAAEB302213FCF820004BF43 /* LPDRSASigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDRSASigner.m; sourceTree = "<group>"; };
+		AAAEB304213FCFED0004BF43 /* openssl_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
+		AAAEB305213FCFED0004BF43 /* openssl_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
+		AAAEB3BB21400E5C0004BF43 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = ../LPDAlipay/framework/AlipaySDK.framework; sourceTree = "<group>"; };
+		B76FE1D40BE22361FC90F0BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA08398E506A50C63B571423 /* Pods-LPDAlipay_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDAlipay_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPDAlipay_Tests/Pods-LPDAlipay_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,10 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				F11FA5634441825CF3DD4B93 /* Pods_LPDAlipay_Example.framework in Frameworks */,
+				C293A4A334A464D6342CAC35 /* libPods-LPDAlipay_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +109,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				C5D862DC739FBBFDB42F027A /* Pods_LPDAlipay_Tests.framework in Frameworks */,
+				E4DB271A53853A3995139E09 /* libPods-LPDAlipay_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,12 +140,20 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA216A5421401ECC005CB77B /* CFNetwork.framework */,
+				AA216A5221401EBC005CB77B /* CoreMotion.framework */,
+				AA216A5021401EAA005CB77B /* CoreTelephony.framework */,
+				AA216A4E21401E96005CB77B /* CoreText.framework */,
+				AA216A4C21401E86005CB77B /* SystemConfiguration.framework */,
+				AA216A4A21401E4E005CB77B /* libc++.tbd */,
+				AA216A4821401E37005CB77B /* libz.tbd */,
+				AAAEB3BB21400E5C0004BF43 /* AlipaySDK.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				85C5585EFEF17094D9B81DBC /* Pods_LPDAlipay_Example.framework */,
-				0EB97458FA1FD8A4C88B35C6 /* Pods_LPDAlipay_Tests.framework */,
+				7928D3B5F348DD73C2337730 /* libPods-LPDAlipay_Example.a */,
+				817130FC0CC7A710B3C551FF /* libPods-LPDAlipay_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,9 +166,19 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* LPDViewController.h */,
 				6003F5A6195388D20070C39A /* LPDViewController.m */,
+				AAAEB2F8213FC5A60004BF43 /* LPDWebViewController.h */,
+				AAAEB2F9213FC5A60004BF43 /* LPDWebViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				AAAEB2FB213FCDFA0004BF43 /* LPDAuthInfo.h */,
+				AAAEB2FC213FCDFA0004BF43 /* LPDAuthInfo.m */,
+				AAAEB2FE213FCEDF0004BF43 /* LPDOrderInfo.h */,
+				AAAEB2FF213FCEDF0004BF43 /* LPDOrderInfo.m */,
+				AAAEB301213FCF820004BF43 /* LPDRSASigner.h */,
+				AAAEB302213FCF820004BF43 /* LPDRSASigner.m */,
+				AAAEB304213FCFED0004BF43 /* openssl_wrapper.h */,
+				AAAEB305213FCFED0004BF43 /* openssl_wrapper.m */,
 			);
 			name = "Example for LPDAlipay";
 			path = LPDAlipay;
@@ -207,7 +246,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				49F3FB4670607A475884D2EC /* [CP] Embed Pods Frameworks */,
+				1276D3411725D2352256B250 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +286,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = cnkcq;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 8P2R9XN7Q8;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -312,22 +354,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		49F3FB4670607A475884D2EC /* [CP] Embed Pods Frameworks */ = {
+		1276D3411725D2352256B250 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LPDAlipay_Example/Pods-LPDAlipay_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LPDAlipay/LPDAlipay.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LPDAlipay_Example/Pods-LPDAlipay_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/LPDAlipay/AlipaySDK.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LPDAlipay.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LPDAlipay_Example/Pods-LPDAlipay_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LPDAlipay_Example/Pods-LPDAlipay_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B2DE6DDF62D9AB67B4395E1 /* [CP] Check Pods Manifest.lock */ = {
@@ -355,8 +397,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAEB306213FCFED0004BF43 /* openssl_wrapper.m in Sources */,
+				AAAEB2FD213FCDFA0004BF43 /* LPDAuthInfo.m in Sources */,
+				AAAEB300213FCEDF0004BF43 /* LPDOrderInfo.m in Sources */,
 				6003F59E195388D20070C39A /* LPDAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* LPDViewController.m in Sources */,
+				AAAEB2FA213FC5A60004BF43 /* LPDWebViewController.m in Sources */,
+				AAAEB303213FCF820004BF43 /* LPDRSASigner.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,10 +532,14 @@
 			baseConfigurationReference = 99BF1FCBEB5A30A258A645C0 /* Pods-LPDAlipay_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8P2R9XN7Q8;
+				ENABLE_ONLY_ACTIVE_RESOURCES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LPDAlipay/LPDAlipay-Prefix.pch";
 				INFOPLIST_FILE = "LPDAlipay/LPDAlipay-Info.plist";
 				MODULE_NAME = ExampleApp;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -500,10 +551,13 @@
 			baseConfigurationReference = 2BB45BD71A85315AE88091C3 /* Pods-LPDAlipay_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8P2R9XN7Q8;
+				ENABLE_ONLY_ACTIVE_RESOURCES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LPDAlipay/LPDAlipay-Prefix.pch";
 				INFOPLIST_FILE = "LPDAlipay/LPDAlipay-Info.plist";
 				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -1,0 +1,22 @@
+PODS:
+  - LPDAlipay (0.1.0):
+    - LPDAlipay/Core (= 0.1.0)
+  - LPDAlipay/Alipay (0.1.0)
+  - LPDAlipay/Core (0.1.0):
+    - LPDAlipay/Alipay
+    - LPDAlipay/openssl
+  - LPDAlipay/openssl (0.1.0)
+
+DEPENDENCIES:
+  - LPDAlipay (from `../`)
+
+EXTERNAL SOURCES:
+  LPDAlipay:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LPDAlipay: c3fe7b28466fd8737d2889be23560d3809d1bfb1
+
+PODFILE CHECKSUM: 72e997470bdc0f29ede52ce3f79c5854ac1a9b9d
+
+COCOAPODS: 1.5.2

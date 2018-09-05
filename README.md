@@ -9,6 +9,10 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### [App支付客户端DEMO&SDK](https://docs.open.alipay.com/54/104509)
+
+### [App支付iOS集成流程](https://docs.open.alipay.com/204/105295/)
+
 ## Requirements
 
 ## Installation
