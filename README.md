@@ -27,13 +27,13 @@ pod 'LPDAlipay'
 ## 检查
 
 ```ruby
-pod lib lint --sources='git@git.elenet.me:LPD-iOS/LPDSpecs.git' --allow-warnings --verbose --use-libraries --verbose
+pod lib lint --sources='git@github.com:ModulizationSwift/PrivatePods.git' --allow-warnings --verbose --use-libraries --verbose
 ```
 ## 发布
 
 ```ruby
 
-pod repo push LPDSpecs LPDAlipay.podspec --sources='git@git.elenet.me:LPD-iOS/LPDSpecs.git' --allow-warnings --verbose --use-libraries --verbose
+pod repo push PrivatePods LPDAlipay.podspec --sources='git@github.com:ModulizationSwift/PrivatePods.git' --allow-warnings --verbose --use-libraries --verbose
 
 ```
 
@@ -44,3 +44,5 @@ cnkcq, chengquan.wang@ele.me
 ## License
 
 LPDAlipay is available under the MIT license. See the LICENSE file for more info.
+
+
