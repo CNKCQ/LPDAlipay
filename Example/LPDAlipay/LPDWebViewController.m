@@ -33,7 +33,7 @@
     self.webView.delegate = self;
     
     // 加载已经配置的url
-    NSString* webUrl = [[NSUserDefaults standardUserDefaults]objectForKey:@"alipayweburl"];
+    NSString* webUrl = [[NSUserDefaults standardUserDefaults] objectForKey:@"alipayweburl"];
     if (webUrl.length > 0) {
         [self loadWithUrlStr:webUrl];
     }
@@ -46,21 +46,21 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     //新版本的H5拦截支付对老版本的获取订单串和订单支付接口进行合并，推荐使用该接口
-//    __weak typeof(self) wself = self;
-//    BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[request.URL absoluteString] fromScheme:@"alisdkdemo" callback:^(NSDictionary *result) {
-//        // 处理支付结果
-//        NSLog(@"%@", result);
-//        // isProcessUrlPay 代表 支付宝已经处理该URL
-//        if ([result[@"isProcessUrlPay"] boolValue]) {
-//            // returnUrl 代表 第三方App需要跳转的成功页URL
-//            NSString* urlStr = result[@"returnUrl"];
-//            [wself loadWithUrlStr:urlStr];
-//        }
-//    }];
-//    
-//    if (isIntercepted) {
-//        return NO;
-//    }
+    __weak typeof(self) wself = self;
+    BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[request.URL absoluteString] fromScheme:@"alisdkdemo" callback:^(NSDictionary *result) {
+        // 处理支付结果
+        NSLog(@"%@", result);
+        // isProcessUrlPay 代表 支付宝已经处理该URL
+        if ([result[@"isProcessUrlPay"] boolValue]) {
+            // returnUrl 代表 第三方App需要跳转的成功页URL
+            NSString* urlStr = result[@"returnUrl"];
+            [wself loadWithUrlStr:urlStr];
+        }
+    }];
+    
+    if (isIntercepted) {
+        return NO;
+    }
     return YES;
 }
 

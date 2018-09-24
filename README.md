@@ -24,6 +24,19 @@ it, simply add the following line to your Podfile:
 pod 'LPDAlipay'
 ```
 
+## 检查
+
+```ruby
+pod lib lint --sources='git@git.elenet.me:LPD-iOS/LPDSpecs.git' --allow-warnings --verbose --use-libraries --verbose
+```
+## 发布
+
+```ruby
+
+pod repo push LPDSpecs LPDAlipay.podspec --sources='git@git.elenet.me:LPD-iOS/LPDSpecs.git' --allow-warnings --verbose --use-libraries --verbose
+
+```
+
 ## Author
 
 cnkcq, chengquan.wang@ele.me

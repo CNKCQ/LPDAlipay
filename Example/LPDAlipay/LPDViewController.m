@@ -7,11 +7,11 @@
 //
 
 #import "LPDViewController.h"
-//#import <AlipaySDK/AlipaySDK.h>
 #import "LPDAuthInfo.h"
 #import "LPDOrderInfo.h"
 #import "LPDRSASigner.h"
 #import "LPDWebViewController.h"
+#import <LPDAlipay/LPDAlipay.h>
 
 
 #define AP_SUBVIEW_XGAP   (20.0f)
@@ -105,14 +105,14 @@
     /*============================================================================*/
     /*=======================需要填写商户app申请的===================================*/
     /*============================================================================*/
-    NSString *appID = @"";
+    NSString *appID = @"2018073060816700";
     
     // 如下私钥，rsa2PrivateKey 或者 rsaPrivateKey 只需要填入一个
     // 如果商户两个都设置了，优先使用 rsa2PrivateKey
     // rsa2PrivateKey 可以保证商户交易在更加安全的环境下进行，建议使用 rsa2PrivateKey
     // 获取 rsa2PrivateKey，建议使用支付宝提供的公私钥生成工具生成，
     // 工具地址：https://doc.open.alipay.com/docs/doc.htm?treeId=291&articleId=106097&docType=1
-    NSString *rsa2PrivateKey = @"";
+    NSString *rsa2PrivateKey = @"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6KZqX0v41KqwookuUbDl4fQrNT3kAQUfiRsgBJDHN79q+d7lb3NcRkyF4KcMjOuJAotFTYid0MvHtFtq+u6K18k+P0P7C8D516XbF8ueARBVK6SAt6T1g2YfkYB919zUUqa2j06jFb5C3pt0CNy6J2vqlKy4LpnKkdIBJEk4Eic86xesD8RJ7jnjP7juleTamPuWA5zoJGaZDmX5Elwx1BqTJSNXml36ps8U2d+KEZjK0qY4BYoqxUdPc0TrzO3fjnspZInNbM8ChN00RYUfnokbGnOPxxfCNWYrm1PAXHxyOPmwWpvCtXpHmnAPHcWI0QFve0WfKpDLPL6Q/1upXAgMBAAECggEAYeW/BlhOlmb6YeP3GvZOwq3/IDjKyPeLddMDGpaOGl4oCkGrmENqVjOpRiewFrbAhH0a116moNSppKSAJA1IY6YpcNfXIWx1bEx5yV8TnsAu8lXmNj6RqHy8mbxyzvZRU6xnQ9/qwOkKkYmOb7vVHWmqpXEvpbDCWPlq/QJDRN7M8+98sxC4Smf0eMiSgWsTRjnmAAYKNvSVTvx3pkNW7M567Fz9GmxPmYlENTJ7VffFJlnL4tE4nXer2135p9NsPFxFkuCOdCUcL228WqTxx/jKOWEGXyHXyETKq0XIKyYdQMyii9z8YUKzwH29U+mX15tG8Y9yL3Pdy7IceBXqAQKBgQDxh24Wb9cRN5uHmmPZ8bQq7sjeaeyt8tZR/ntPXDEaEuKmZItRmsFmZZfziKUDmrrzaOO2I/c4+vn24cEffzy8UwEZicCwWPR+nau+XaJOm5SS/7ua0kCqdqm0Y8B6mkpskiOJ1Cn6VbVxj31ryDh8keFhLXnXhw5J2hL/N97MjwKBgQDFUPZ9FkKRG8a9Jd/ea0o9gSsP7gFdSG0So5biWVd32Wyr82s0BLHj7eCmMRoOoI3PHeeyzy3KHZ7djWlTRNV2Rxq0gC7id//ouYwu2Q4I46A58N5vZCdzaegIEkoIu/PDbLM5EzCZp0vK+7a8eKJY6JZfnmXMLAIzmQE/skL5uQKBgQC1mswWyL8gLfyeqGKd1BRRF7wnJ+QTIv0tJ7iWAk7VOQ/8Zqsuj7sNgCQRtFPG8wfQz7QwFrjjuipLDJIGWchUHeE8z4v3zNsBfRJOj97jVi4PnYP1NFP1GEYf4cUvKmX9XqCkGMf7d4h3O5nleeWnHJUnWWc8vErtErCn/91hVwKBgF8+D1ydrBADClEuwPrJaxJ5EOIljj8KwKtoj2I+obvWFWCCpNJ9Gajdn7xYoy1ATnMVCkwDOSUAWziyE48AANGQzNEntnnWVo5tUb8jQmUECsks/RFjlK9fBYMv4NCKeMVx6Ki6HJFucWVPTwt2Z1bnHf6VpKmC7KUfS70FPNLxAoGAff/SxDFLtWji05u8K8I+hUsctPJVf0GWrTza7VLSxM0JkYv9j0LFK5A2KAJaUUdtZdMvvvh+qGQZ7MlC/fYqp6YaSA9IL1ENpEsyUP702VGvwllUBxLH34QX3Ux1vz8vC9VfOAL+TS8f4je4u/wdvRH9hQXAnUs7thGxGxvSnNI=";
     NSString *rsaPrivateKey = @"";
     /*============================================================================*/
     /*============================================================================*/
@@ -143,6 +143,7 @@
     
     // NOTE: app_id设置
     order.app_id = appID;
+
     
     // NOTE: 支付接口名称
     order.method = @"alipay.trade.app.pay";
@@ -194,9 +195,9 @@
                                  orderInfoEncoded, signedString];
         
         // NOTE: 调用支付结果开始支付
-//        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-//            NSLog(@"reslut = %@",resultDic);
-//        }];
+        [[LPDAlipay shared] lpd_payOrder:order fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+            NSLog(@"reslut = %@",resultDic);
+        }];
     }
 }
 
@@ -213,15 +214,15 @@
     /*============================================================================*/
     /*=======================需要填写商户app申请的===================================*/
     /*============================================================================*/
-    NSString *pid = @"";
-    NSString *appID = @"";
+    NSString *pid = @"2088421472427803";
+    NSString *appID = @"2018073060816700";
     
     // 如下私钥，rsa2PrivateKey 或者 rsaPrivateKey 只需要填入一个
     // 如果商户两个都设置了，优先使用 rsa2PrivateKey
     // rsa2PrivateKey 可以保证商户交易在更加安全的环境下进行，建议使用 rsa2PrivateKey
     // 获取 rsa2PrivateKey，建议使用支付宝提供的公私钥生成工具生成，
     // 工具地址：https://doc.open.alipay.com/docs/doc.htm?treeId=291&articleId=106097&docType=1
-    NSString *rsa2PrivateKey = @"";
+    NSString *rsa2PrivateKey = @"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6KZqX0v41KqwookuUbDl4fQrNT3kAQUfiRsgBJDHN79q+d7lb3NcRkyF4KcMjOuJAotFTYid0MvHtFtq+u6K18k+P0P7C8D516XbF8ueARBVK6SAt6T1g2YfkYB919zUUqa2j06jFb5C3pt0CNy6J2vqlKy4LpnKkdIBJEk4Eic86xesD8RJ7jnjP7juleTamPuWA5zoJGaZDmX5Elwx1BqTJSNXml36ps8U2d+KEZjK0qY4BYoqxUdPc0TrzO3fjnspZInNbM8ChN00RYUfnokbGnOPxxfCNWYrm1PAXHxyOPmwWpvCtXpHmnAPHcWI0QFve0WfKpDLPL6Q/1upXAgMBAAECggEAYeW/BlhOlmb6YeP3GvZOwq3/IDjKyPeLddMDGpaOGl4oCkGrmENqVjOpRiewFrbAhH0a116moNSppKSAJA1IY6YpcNfXIWx1bEx5yV8TnsAu8lXmNj6RqHy8mbxyzvZRU6xnQ9/qwOkKkYmOb7vVHWmqpXEvpbDCWPlq/QJDRN7M8+98sxC4Smf0eMiSgWsTRjnmAAYKNvSVTvx3pkNW7M567Fz9GmxPmYlENTJ7VffFJlnL4tE4nXer2135p9NsPFxFkuCOdCUcL228WqTxx/jKOWEGXyHXyETKq0XIKyYdQMyii9z8YUKzwH29U+mX15tG8Y9yL3Pdy7IceBXqAQKBgQDxh24Wb9cRN5uHmmPZ8bQq7sjeaeyt8tZR/ntPXDEaEuKmZItRmsFmZZfziKUDmrrzaOO2I/c4+vn24cEffzy8UwEZicCwWPR+nau+XaJOm5SS/7ua0kCqdqm0Y8B6mkpskiOJ1Cn6VbVxj31ryDh8keFhLXnXhw5J2hL/N97MjwKBgQDFUPZ9FkKRG8a9Jd/ea0o9gSsP7gFdSG0So5biWVd32Wyr82s0BLHj7eCmMRoOoI3PHeeyzy3KHZ7djWlTRNV2Rxq0gC7id//ouYwu2Q4I46A58N5vZCdzaegIEkoIu/PDbLM5EzCZp0vK+7a8eKJY6JZfnmXMLAIzmQE/skL5uQKBgQC1mswWyL8gLfyeqGKd1BRRF7wnJ+QTIv0tJ7iWAk7VOQ/8Zqsuj7sNgCQRtFPG8wfQz7QwFrjjuipLDJIGWchUHeE8z4v3zNsBfRJOj97jVi4PnYP1NFP1GEYf4cUvKmX9XqCkGMf7d4h3O5nleeWnHJUnWWc8vErtErCn/91hVwKBgF8+D1ydrBADClEuwPrJaxJ5EOIljj8KwKtoj2I+obvWFWCCpNJ9Gajdn7xYoy1ATnMVCkwDOSUAWziyE48AANGQzNEntnnWVo5tUb8jQmUECsks/RFjlK9fBYMv4NCKeMVx6Ki6HJFucWVPTwt2Z1bnHf6VpKmC7KUfS70FPNLxAoGAff/SxDFLtWji05u8K8I+hUsctPJVf0GWrTza7VLSxM0JkYv9j0LFK5A2KAJaUUdtZdMvvvh+qGQZ7MlC/fYqp6YaSA9IL1ENpEsyUP702VGvwllUBxLH34QX3Ux1vz8vC9VfOAL+TS8f4je4u/wdvRH9hQXAnUs7thGxGxvSnNI=";
     NSString *rsaPrivateKey = @"";
     /*============================================================================*/
     /*============================================================================*/
@@ -256,7 +257,7 @@
         authInfo.authType = authType;
     }
     
-    //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
+    //应用注册scheme,在AlixPayDemo-Info.plist定义 URL types
     NSString *appScheme = @"alisdkdemo";
     
     // 将授权信息拼接成字符串
@@ -275,24 +276,22 @@
     // 将签名成功字符串格式化为订单字符串,请严格按照该格式
     if (signedString.length > 0) {
         authInfoStr = [NSString stringWithFormat:@"%@&sign=%@&sign_type=%@", authInfoStr, signedString, ((rsa2PrivateKey.length > 1)?@"RSA2":@"RSA")];
-//        [[AlipaySDK defaultService] auth_V2WithInfo:authInfoStr
-//                                         fromScheme:appScheme
-//                                           callback:^(NSDictionary *resultDic) {
-//                                               NSLog(@"result = %@",resultDic);
-//                                               // 解析 auth code
-//                                               NSString *result = resultDic[@"result"];
-//                                               NSString *authCode = nil;
-//                                               if (result.length>0) {
-//                                                   NSArray *resultArr = [result componentsSeparatedByString:@"&"];
-//                                                   for (NSString *subResult in resultArr) {
-//                                                       if (subResult.length > 10 && [subResult hasPrefix:@"auth_code="]) {
-//                                                           authCode = [subResult substringFromIndex:10];
-//                                                           break;
-//                                                       }
-//                                                   }
-//                                               }
-//                                               NSLog(@"授权结果 authCode = %@", authCode?:@"");
-//                                           }];
+        [[LPDAlipay shared] lpd_auth_V2WithInfo:authInfoStr fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            // 解析 auth code
+            NSString *result = resultDic[@"result"];
+            NSString *authCode = nil;
+            if (result.length>0) {
+                NSArray *resultArr = [result componentsSeparatedByString:@"&"];
+                for (NSString *subResult in resultArr) {
+                    if (subResult.length > 10 && [subResult hasPrefix:@"auth_code="]) {
+                        authCode = [subResult substringFromIndex:10];
+                        break;
+                    }
+                }
+            }
+            NSLog(@"授权结果 authCode = %@", authCode?:@"");
+        }];
     }
 }
 

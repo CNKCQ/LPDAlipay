@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LPDAlipay'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of LPDAlipay.'
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
     s.homepage         = 'https://github.com/cnkcq/LPDAlipay'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'cnkcq' => 'chengquan.wang@ele.me' }
-    s.source           = { :git => 'https://github.com/cnkcq/LPDAlipay.git', :tag => s.version.to_s }
+    s.source           = { :git => 'git@github.com:CNKCQ/LPDAlipay.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = '8.0'
     
@@ -33,18 +33,18 @@ TODO: Add long description of the pod here.
     s.subspec 'Core' do |ss|
         ss.public_header_files = 'LPDAlipay/Classes/LPDAlipay.h'
         ss.source_files = 'LPDAlipay/Classes/**/*.{h,m,mm}'
-        ss.resources = 'LPDAlipay/Assets/*'
-        ss.dependency 'LPDAlipay/openssl'
+        #ss.resources = 'LPDAlipay/Assets/*'
         ss.dependency 'LPDAlipay/Alipay'
     end
     
     s.subspec 'openssl' do |ss|
         ss.header_dir          = 'openssl'
-        ss.public_header_files = "LPDAlipay/libs/openssl/*"
+        ss.public_header_files = "LPDAlipay/libs/openssl/*.h"
+        ss.source_files = "LPDAlipay/libs/openssl/*.h"
         ss.vendored_libraries  = "LPDAlipay/libs/libcrypto.a", "LPDAlipay/libs/libssl.a"
         ss.preserve_paths      = "LPDAlipay/libs/libcrypto.a", "LPDAlipay/libs/libssl.a"
         ss.libraries           = 'crypto', 'ssl'
-        ss.requires_arc        = false
+        ss.requires_arc        = true
         ss.libraries = ['stdc++','c++.1','c++abi','z.1.1.3','icucore']
     end
     
@@ -53,6 +53,14 @@ TODO: Add long description of the pod here.
         ss.resource_bundle = {
             'AlipaySDK' => ['LPDAlipay/framework/*.bundle']
         }
-        ss.frameworks            = 'SystemConfiguration', 'CoreTelephony', 'QuartzCore', 'CoreText', 'CoreGraphics', 'UIKit', 'Foundation','CFNetwork', 'CoreMotion'
+        ss.frameworks      = 'SystemConfiguration', 'CoreTelephony', 'QuartzCore', 'CoreText', 'CoreGraphics', 'UIKit', 'Foundation','CFNetwork', 'CoreMotion'
+        ss.libraries       = "z", "c++"
     end
+    
+    s.subspec 'Test' do |ss|
+        ss.public_header_files = 'LPDAlipay/Test/*.h'
+        ss.source_files = 'LPDAlipay/Test/**/*.{h,m,mm}'
+        ss.dependency 'LPDAlipay/openssl'
+    end
+
 end

@@ -24,8 +24,6 @@
 		AAAEB2FA213FC5A60004BF43 /* LPDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB2F9213FC5A60004BF43 /* LPDWebViewController.m */; };
 		AAAEB2FD213FCDFA0004BF43 /* LPDAuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB2FC213FCDFA0004BF43 /* LPDAuthInfo.m */; };
 		AAAEB300213FCEDF0004BF43 /* LPDOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB2FF213FCEDF0004BF43 /* LPDOrderInfo.m */; };
-		AAAEB303213FCF820004BF43 /* LPDRSASigner.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB302213FCF820004BF43 /* LPDRSASigner.m */; };
-		AAAEB306213FCFED0004BF43 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEB305213FCFED0004BF43 /* openssl_wrapper.m */; };
 		C293A4A334A464D6342CAC35 /* libPods-LPDAlipay_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7928D3B5F348DD73C2337730 /* libPods-LPDAlipay_Example.a */; };
 		E4DB271A53853A3995139E09 /* libPods-LPDAlipay_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817130FC0CC7A710B3C551FF /* libPods-LPDAlipay_Tests.a */; };
 /* End PBXBuildFile section */
@@ -82,10 +80,6 @@
 		AAAEB2FC213FCDFA0004BF43 /* LPDAuthInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDAuthInfo.m; sourceTree = "<group>"; };
 		AAAEB2FE213FCEDF0004BF43 /* LPDOrderInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPDOrderInfo.h; sourceTree = "<group>"; };
 		AAAEB2FF213FCEDF0004BF43 /* LPDOrderInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDOrderInfo.m; sourceTree = "<group>"; };
-		AAAEB301213FCF820004BF43 /* LPDRSASigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPDRSASigner.h; sourceTree = "<group>"; };
-		AAAEB302213FCF820004BF43 /* LPDRSASigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPDRSASigner.m; sourceTree = "<group>"; };
-		AAAEB304213FCFED0004BF43 /* openssl_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
-		AAAEB305213FCFED0004BF43 /* openssl_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
 		AAAEB3BB21400E5C0004BF43 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = ../LPDAlipay/framework/AlipaySDK.framework; sourceTree = "<group>"; };
 		B76FE1D40BE22361FC90F0BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA08398E506A50C63B571423 /* Pods-LPDAlipay_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPDAlipay_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPDAlipay_Tests/Pods-LPDAlipay_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,10 +169,6 @@
 				AAAEB2FC213FCDFA0004BF43 /* LPDAuthInfo.m */,
 				AAAEB2FE213FCEDF0004BF43 /* LPDOrderInfo.h */,
 				AAAEB2FF213FCEDF0004BF43 /* LPDOrderInfo.m */,
-				AAAEB301213FCF820004BF43 /* LPDRSASigner.h */,
-				AAAEB302213FCF820004BF43 /* LPDRSASigner.m */,
-				AAAEB304213FCFED0004BF43 /* openssl_wrapper.h */,
-				AAAEB305213FCFED0004BF43 /* openssl_wrapper.m */,
 			);
 			name = "Example for LPDAlipay";
 			path = LPDAlipay;
@@ -397,13 +387,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAAEB306213FCFED0004BF43 /* openssl_wrapper.m in Sources */,
 				AAAEB2FD213FCDFA0004BF43 /* LPDAuthInfo.m in Sources */,
 				AAAEB300213FCEDF0004BF43 /* LPDOrderInfo.m in Sources */,
 				6003F59E195388D20070C39A /* LPDAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* LPDViewController.m in Sources */,
 				AAAEB2FA213FC5A60004BF43 /* LPDWebViewController.m in Sources */,
-				AAAEB303213FCF820004BF43 /* LPDRSASigner.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

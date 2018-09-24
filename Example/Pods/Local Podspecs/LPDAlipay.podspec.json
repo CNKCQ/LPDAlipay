@@ -1,6 +1,6 @@
 {
   "name": "LPDAlipay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A short description of LPDAlipay.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/cnkcq/LPDAlipay",
@@ -12,8 +12,8 @@
     "cnkcq": "chengquan.wang@ele.me"
   },
   "source": {
-    "git": "https://github.com/cnkcq/LPDAlipay.git",
-    "tag": "0.1.0"
+    "git": "git@github.com:CNKCQ/LPDAlipay.git",
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "8.0"
@@ -24,11 +24,7 @@
       "name": "Core",
       "public_header_files": "LPDAlipay/Classes/LPDAlipay.h",
       "source_files": "LPDAlipay/Classes/**/*.{h,m,mm}",
-      "resources": "LPDAlipay/Assets/*",
       "dependencies": {
-        "LPDAlipay/openssl": [
-
-        ],
         "LPDAlipay/Alipay": [
 
         ]
@@ -37,7 +33,8 @@
     {
       "name": "openssl",
       "header_dir": "openssl",
-      "public_header_files": "LPDAlipay/libs/openssl/*",
+      "public_header_files": "LPDAlipay/libs/openssl/*.h",
+      "source_files": "LPDAlipay/libs/openssl/*.h",
       "vendored_libraries": [
         "LPDAlipay/libs/libcrypto.a",
         "LPDAlipay/libs/libssl.a"
@@ -53,7 +50,7 @@
         "z.1.1.3",
         "icucore"
       ],
-      "requires_arc": false
+      "requires_arc": true
     },
     {
       "name": "Alipay",
@@ -73,7 +70,21 @@
         "Foundation",
         "CFNetwork",
         "CoreMotion"
+      ],
+      "libraries": [
+        "z",
+        "c++"
       ]
+    },
+    {
+      "name": "Test",
+      "public_header_files": "LPDAlipay/Test/*.h",
+      "source_files": "LPDAlipay/Test/**/*.{h,m,mm}",
+      "dependencies": {
+        "LPDAlipay/openssl": [
+
+        ]
+      }
     }
   ]
 }
